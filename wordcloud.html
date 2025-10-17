@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>Word Cloud - Checklock Survey</title>
+<style>
+body { font-family: Arial, sans-serif; background: #f0f0f0; padding: 20px; }
+.container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+h1 { text-align: center; color: #333; }
+h2 { text-align: center; color: #555; margin-top: 40px; }
+.chart-container { margin: 40px auto; max-width: 600px; }
+.bar-chart { display: flex; justify-content: space-around; align-items: flex-end; height: 300px; padding: 20px; background: #fafafa; border-radius: 10px; margin-bottom: 10px; }
+.bar-wrapper { display: flex; flex-direction: column; align-items: center; flex: 1; margin: 0 10px; }
+.bar { width: 80px; border-radius: 8px 8px 0 0; transition: transform 0.3s; display: flex; align-items: flex-end; justify-content: center; color: white; font-weight: bold; font-size: 20px; padding-bottom: 10px; }
+.bar:hover { transform: translateY(-5px); }
+.positive-bar { background: linear-gradient(to top, #10b981, #34d399); }
+.neutral-bar { background: linear-gradient(to top, #f59e0b, #fbbf24); }
+.negative-bar { background: linear-gradient(to top, #ef4444, #f87171); }
+.bar-label { margin-top: 10px; font-weight: bold; color: #333; }
+.bar-count { margin-top: 5px; font-size: 14px; color: #666; }
+.word-cloud { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 20px; }
+.word { display: inline-block; padding: 5px 15px; margin: 5px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 5px; font-weight: bold; transition: transform 0.2s; }
+.word:hover { transform: scale(1.1); }
+</style>
+</head>
+<body>
+<div class='container'>
+<h1>📊 Analisis Survey Checklock</h1>
+<h2>Hasil Sentimen</h2>
+<div class='chart-container'>
+<div class='bar-chart'>
+<div class='bar-wrapper'>
+<div class='bar positive-bar' style='height: 25px;'>3</div>
+<div class='bar-label'>✅ Suka</div>
+<div class='bar-count'>3 menjawab iya suka!</div>
+</div>
+<div class='bar-wrapper'>
+<div class='bar neutral-bar' style='height: 250px;'>29</div>
+<div class='bar-label'>😐 Netral</div>
+<div class='bar-count'>29 menjawab netral!</div>
+</div>
+<div class='bar-wrapper'>
+<div class='bar negative-bar' style='height: 155px;'>18</div>
+<div class='bar-label'>❌ Tidak Suka</div>
+<div class='bar-count'>18 menjawab tidak suka!</div>
+</div>
+</div>
+</div>
+<h2>Word Cloud - Kata yang Sering Muncul</h2>
+<div class='word-cloud'>
+<span class='word' style='font-size: 48px;'>gapapa (29)</span>
+<span class='word' style='font-size: 30px;'>ribet (6)</span>
+<span class='word' style='font-size: 18px;'>males (2)</span>
+<span class='word' style='font-size: 18px;'>lebih (2)</span>
+<span class='word' style='font-size: 18px;'>kadang (2)</span>
+<span class='word' style='font-size: 15px;'>menghambat (1)</span>
+<span class='word' style='font-size: 15px;'>waktu (1)</span>
+<span class='word' style='font-size: 15px;'>meribetkan (1)</span>
+<span class='word' style='font-size: 15px;'>mesin (1)</span>
+<span class='word' style='font-size: 15px;'>ngantri (1)</span>
+<span class='word' style='font-size: 15px;'>nya (1)</span>
+<span class='word' style='font-size: 15px;'>panjang (1)</span>
+<span class='word' style='font-size: 15px;'>pulang (1)</span>
+<span class='word' style='font-size: 15px;'>repot (1)</span>
+<span class='word' style='font-size: 15px;'>ruwet (1)</span>
+<span class='word' style='font-size: 15px;'>scan (1)</span>
+<span class='word' style='font-size: 15px;'>seperti (1)</span>
+<span class='word' style='font-size: 15px;'>seru (1)</span>
+<span class='word' style='font-size: 15px;'>sistem (1)</span>
+<span class='word' style='font-size: 15px;'>sudah (1)</span>
+<span class='word' style='font-size: 15px;'>suka (1)</span>
+<span class='word' style='font-size: 15px;'>tau (1)</span>
+<span class='word' style='font-size: 15px;'>tempat (1)</span>
+<span class='word' style='font-size: 15px;'>abigail (1)</span>
+<span class='word' style='font-size: 15px;'>error (1)</span>
+<span class='word' style='font-size: 15px;'>agak (1)</span>
+<span class='word' style='font-size: 15px;'>antri (1)</span>
+<span class='word' style='font-size: 15px;'>bagus (1)</span>
+<span class='word' style='font-size: 15px;'>biar (1)</span>
+<span class='word' style='font-size: 15px;'>bisa (1)</span>
+</div>
+</div>
+</body>
+</html>

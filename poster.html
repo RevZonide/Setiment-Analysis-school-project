@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>Poster - Analisis Survey Checklock</title>
+<style>
+@page { size: A4; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: white; }
+.poster { width: 210mm; height: 297mm; padding: 15mm; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; }
+.content { background: white; height: 100%; border-radius: 15px; padding: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); display: flex; flex-direction: column; }
+.header { text-align: center; margin-bottom: 15px; }
+h1 { color: #667eea; font-size: 32px; margin-bottom: 5px; }
+.subtitle { color: #666; font-size: 14px; }
+.stats-row { display: flex; justify-content: space-around; margin: 15px 0; gap: 10px; }
+.stat-box { flex: 1; text-align: center; padding: 12px; border-radius: 10px; background: #f8f9fa; }
+.stat-number { font-size: 28px; font-weight: bold; color: #667eea; }
+.stat-label { font-size: 12px; color: #666; margin-top: 3px; }
+.chart-section { flex: 1; display: flex; gap: 15px; margin: 10px 0; }
+.bar-chart-container { flex: 0.4; display: flex; flex-direction: column; }
+.chart-title { font-size: 16px; font-weight: bold; color: #333; margin-bottom: 10px; text-align: center; }
+.bar-chart { display: flex; justify-content: space-around; align-items: flex-end; height: 180px; padding: 10px; background: #fafafa; border-radius: 10px; }
+.bar-wrapper { display: flex; flex-direction: column; align-items: center; flex: 1; }
+.bar { width: 50px; border-radius: 6px 6px 0 0; display: flex; align-items: flex-end; justify-content: center; color: white; font-weight: bold; font-size: 16px; padding-bottom: 8px; }
+.positive-bar { background: linear-gradient(to top, #10b981, #34d399); }
+.neutral-bar { background: linear-gradient(to top, #f59e0b, #fbbf24); }
+.negative-bar { background: linear-gradient(to top, #ef4444, #f87171); }
+.bar-label { margin-top: 8px; font-weight: bold; color: #333; font-size: 11px; }
+.bar-count { margin-top: 3px; font-size: 10px; color: #666; }
+.sentiment-detail { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.sentiment-item { display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 8px; background: white; }
+.sentiment-icon { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.positive-icon { background: #d1fae5; }
+.neutral-icon { background: #fef3c7; }
+.negative-icon { background: #fee2e2; }
+.sentiment-text { flex: 1; font-size: 11px; }
+.sentiment-count { font-weight: bold; color: #667eea; font-size: 13px; }
+.wordcloud-container { flex: 0.6; display: flex; flex-direction: column; }
+.word-cloud { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; padding: 10px; background: #fafafa; border-radius: 10px; flex: 1; overflow: hidden; }
+.word { display: inline-block; padding: 4px 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 5px; font-weight: bold; white-space: nowrap; }
+.footer { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding-top: 10px; border-top: 2px solid #e5e7eb; }
+.qr-section { display: flex; align-items: center; gap: 10px; }
+.qr-code { width: 80px; height: 80px; }
+.qr-text { font-size: 10px; color: #666; }
+.footer-text { font-size: 10px; color: #666; text-align: right; }
+@media print { body { margin: 0; } .poster { box-shadow: none; } }
+</style>
+</head>
+<body>
+<div class='poster'>
+<div class='content'>
+<div class='header'>
+<h1>Analisis Survey Checklock</h1>
+<p class='subtitle'>Hasil Survey Kepuasan Sistem Absensi Checklock</p>
+</div>
+<div class='stats-row'>
+<div class='stat-box'>
+<div class='stat-number'>50</div>
+<div class='stat-label'>Total Responden</div>
+</div>
+<div class='stat-box' style='background: #d1fae5;'>
+<div class='stat-number' style='color: #10b981;'>3</div>
+<div class='stat-label'>Suka</div>
+</div>
+<div class='stat-box' style='background: #fef3c7;'>
+<div class='stat-number' style='color: #f59e0b;'>29</div>
+<div class='stat-label'>Netral</div>
+</div>
+<div class='stat-box' style='background: #fee2e2;'>
+<div class='stat-number' style='color: #ef4444;'>18</div>
+<div class='stat-label'>Tidak Suka</div>
+</div>
+</div>
+<div class='chart-section'>
+<div class='bar-chart-container'>
+<div class='chart-title'>Hasil Sentimen</div>
+<div class='bar-chart'>
+<div class='bar-wrapper'>
+<div class='bar positive-bar' style='height: 15px;'>3</div>
+<div class='bar-label'>Suka</div>
+</div>
+<div class='bar-wrapper'>
+<div class='bar neutral-bar' style='height: 150px;'>29</div>
+<div class='bar-label'>Netral</div>
+</div>
+<div class='bar-wrapper'>
+<div class='bar negative-bar' style='height: 93px;'>18</div>
+<div class='bar-label'>Tidak</div>
+</div>
+</div>
+<div class='sentiment-detail'>
+<div class='sentiment-item'>
+<div class='sentiment-icon positive-icon'>+</div>
+<div class='sentiment-text'>3 responden menjawab <b>iya suka!</b></div>
+</div>
+<div class='sentiment-item'>
+<div class='sentiment-icon neutral-icon'>-</div>
+<div class='sentiment-text'>29 responden menjawab <b>netral</b></div>
+</div>
+<div class='sentiment-item'>
+<div class='sentiment-icon negative-icon'>x</div>
+<div class='sentiment-text'>18 responden menjawab <b>tidak suka!</b></div>
+</div>
+</div>
+</div>
+<div class='wordcloud-container'>
+<div class='chart-title'>Kata yang Sering Muncul</div>
+<div class='word-cloud'>
+<span class='word' style='font-size: 28px;'>gapapa (29)</span>
+<span class='word' style='font-size: 22px;'>ribet (6)</span>
+<span class='word' style='font-size: 14px;'>males (2)</span>
+<span class='word' style='font-size: 14px;'>lebih (2)</span>
+<span class='word' style='font-size: 14px;'>kadang (2)</span>
+<span class='word' style='font-size: 12px;'>menghambat (1)</span>
+<span class='word' style='font-size: 12px;'>waktu (1)</span>
+<span class='word' style='font-size: 12px;'>meribetkan (1)</span>
+<span class='word' style='font-size: 12px;'>mesin (1)</span>
+<span class='word' style='font-size: 12px;'>ngantri (1)</span>
+<span class='word' style='font-size: 12px;'>nya (1)</span>
+<span class='word' style='font-size: 12px;'>panjang (1)</span>
+<span class='word' style='font-size: 12px;'>pulang (1)</span>
+<span class='word' style='font-size: 12px;'>repot (1)</span>
+<span class='word' style='font-size: 12px;'>ruwet (1)</span>
+<span class='word' style='font-size: 12px;'>scan (1)</span>
+<span class='word' style='font-size: 12px;'>seperti (1)</span>
+<span class='word' style='font-size: 12px;'>seru (1)</span>
+<span class='word' style='font-size: 12px;'>sistem (1)</span>
+<span class='word' style='font-size: 12px;'>sudah (1)</span>
+<span class='word' style='font-size: 12px;'>suka (1)</span>
+<span class='word' style='font-size: 12px;'>tau (1)</span>
+<span class='word' style='font-size: 12px;'>tempat (1)</span>
+<span class='word' style='font-size: 12px;'>abigail (1)</span>
+<span class='word' style='font-size: 12px;'>error (1)</span>
+</div>
+</div>
+</div>
+<div class='footer'>
+<div class='qr-section'>
+<img class='qr-code' src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://github.com/RevZonide/Setiment-Analysis-school-project' alt='QR Code'>
+<div class='qr-text'><b>Scan untuk kode sumber</b><br>GitHub Repository</div>
+</div>
+<div class='footer-text'>
+Dibuat dengan C++ Sentiment Analysis<br>
+Data dianalisis dari 50 responden survey
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
